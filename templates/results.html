@@ -37,9 +37,9 @@
                        href="#collapseExample[{{ forloop.counter }}]">
                         {{ x.username }}, результат:{{ x.result }}/{{ x.total }}</a>
                     <div class="collapse " id="collapseExample[{{ forloop.counter }}]">
-                        <div class="row pl-3">
+                        <div class="row px-3">
                             {% for r in x.results.all %}
-                                <div class="col-auto alert {% if r.success %}alert-success{% else %}alert-danger{% endif %} text-left mb-0">
+                                <div class="col-3 alert {% if r.success %}alert-success{% else %}alert-danger{% endif %} text-left mb-0">
                                     <div>
                                         <span class="font-weight-bold">Номер вопроса: <span
                                                 key="i">{{ forloop.counter }}</span></span> <br>
