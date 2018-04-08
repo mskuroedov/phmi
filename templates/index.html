@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script>
+        var csrf_token = '{{ csrf_token }}';
+    </script>
+</head>
+<body>
+<!--<span class="pict">1</span>-->
+<!--<span class="pict">2</span>-->
+<!--<span class="pict">3</span>-->
+<!--<span class="pict">4</span>-->
+<!--<span class="pict">5</span>-->
+<!--<span class="pict">6</span>-->
+<!--<span class="pict">7</span>-->
+<!--<span class="pict">8</span>-->
+<!--<span class="pict">9</span>-->
+<!--<span class="pict">0</span>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Главная</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/results">Статистика</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section id="hello">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 mx-auto text-center">
+                <h1 class="display-3">Добро пожаловать</h1>
+                <h2 class="display-4">Чтобы начать тестирование введите свое имя</h2>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-5 mt-4 mx-auto text-center">
+                <input type="text" class="form-control form-control-lg" id="user-name" placeholder="Настя Добрынина">
+                <br>
+                <button class="btn btn-primary mt-3" id="start-test">Начать тест</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="test" class="pt-5" style="display: none;   ">
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 text-center" id="question">
+                <p class="mx-auto"><span id="question-num">1</span> / 8</p>
+                <h4 class="mb-3">Запомните число</h4>
+                <p id="question-text"></p>
+                <p id="timer"></p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                         aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col-auto mx-auto text-center" id="answer" style="display: none;">
+                <h4>Введите ответ </h4>
+                <input type="text" class=" mt-3 form-control form-control-lg" placeholder="Введите ответ"
+                       id="answer-input"> <br>
+                <button class="btn btn-primary mt-3" id="answer-complete">Ответить</button>
+            </div>
+            <div class="col-12 text-center" id="finished-test" style="display: none;">
+                <h3><span key="username"></span>, тест завершен</h3>
+                <h5>Ваш результат успешно сохранен</h5>
+                <p>Правильных ответов: <span id="right-answers"></span>/ 8</p>
+
+                <div class="row" id="results-row">
+                    <div class="col-auto alert text-left" id="results-template" style="display: none;">
+                        <span class="font-weight-bold">Номер вопроса: <span key="i"></span></span> <br>
+                        <span>Вопрос <br> <span class="font-weight-bold" key="question"></span></span> <br>
+                        <span>Ответ: <br> <span class="font-weight-bold" key="answer"></span></span> <br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/bootstrap.bundle.js"></script>
+<script src="/static/js/testing.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>

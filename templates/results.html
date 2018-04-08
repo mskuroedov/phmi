@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>results</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-reboot.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Главная</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/results">Статистика</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12">
+                <h3>Результаты прохождений тестов</h3>
+                <p>Вертикальное отображение - <span>{{ horizontal }}</span></p>
+                <p>Горизонтальное отображение - <span>{{ vertical }}</span></p>
+                <p>Большой шрифт - <span>{{ big }}</span></p>
+                <p>Маленький шрифт - <span>{{ small }}</span></p>
+                <p>Римские цифры - <span>{{ rome }}</span></p>
+                <p>Пиктограммы - <span>{{ pict }}</span></p>
+            </div>
+            {% for x in votes %}
+                <div class="col-12 mb-5">
+                    <a role="button" class="btn btn-info text-white mb-4" data-toggle="collapse"
+                       href="#collapseExample[{{ forloop.counter }}]">
+                        {{ x.username }}, результат:{{ x.result }}/{{ x.total }}</a>
+                    <div class="collapse " id="collapseExample[{{ forloop.counter }}]">
+                        <div class="row pl-3">
+                            {% for r in x.results.all %}
+                                <div class="col-auto alert {% if r.success %}alert-success{% else %}alert-danger{% endif %} text-left mb-0">
+                                    <div>
+                                        <span class="font-weight-bold">Номер вопроса: <span
+                                                key="i">{{ forloop.counter }}</span></span> <br>
+                                        <span>Вопрос: <span class="font-weight-bold"
+                                                            key="question">{{ r.right_answer }}</span></span> <br>
+                                        <span>Ответ: <span class="font-weight-bold"
+                                                           key="answer">{{ r.user_answer }}</span></span> <br>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/js/bootstrap.bundle.js"></script>
+</body>
+</html>
