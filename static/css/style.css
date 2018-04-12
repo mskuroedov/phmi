@@ -10,24 +10,18 @@
     font-size: 12px;
 }
 
-.font-weight-bigger .pict {
-    font-size: 28px;
+.font-weight-bigger .pict img{
+width:40px;
 
 }
 
-.font-weight-smaller .pict {
-    font-size: 12px;
+.font-weight-smaller .pict  img{
+    width: 25px;
 
 }
 
-.pict {
-    padding: 5px;
-    padding-right: 6px;
-    border-radius: 7px;
-    background: linear-gradient(to bottom, #b1f8ff, #3f79ff);
-    margin-bottom: 6px;
-    line-height: 2;
-    color: white;
+.pict img{
+    width: 30px;
 }
 
 

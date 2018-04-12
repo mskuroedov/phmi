@@ -60,34 +60,34 @@ function transtalePict(arr) {
     for (var i = 0; i < arr.length; i++) {
         switch (arr[i]) {
             case '0':
-                string += '<span class="pict">0</span>  ';
+                string += '<span class="pict"><img src="/static/icons/0Ресурс%2012estilloFE.svg" alt=""></span>  ';
                 break;
             case '1':
-                string += '<span class="pict">1</span>  ';
+                string += '<span class="pict"><img src="/static/icons/1Ресурс%201estilloFE.svg" alt=""></span>  ';
                 break;
             case '2':
-                string += '<span class="pict">2</span>  ';
+                string += '<span class="pict"><img src="/static/icons/2Ресурс%202estilloFE.svg" alt=""></span>  ';
                 break;
             case '3':
-                string += '<span class="pict">3</span>  ';
+                string += '<span class="pict"><img src="/static/icons/3Ресурс%204estilloFE.svg" alt=""></span>  ';
                 break;
             case '4':
-                string += '<span class="pict">4</span>  ';
+                string += '<span class="pict"><img src="/static/icons/4Ресурс%206estilloFE.svg" alt=""></span>  ';
                 break;
             case '5':
-                string += '<span class="pict">5</span>  ';
+                string += '<span class="pict"><img src="/static/icons/5Ресурс%207estilloFE.svg" alt=""></span>  ';
                 break;
             case '6':
-                string += '<span class="pict">6</span>  ';
+                string += '<span class="pict"><img src="/static/icons/6Ресурс%208estilloFE.svg" alt=""></span>  ';
                 break;
             case '7':
-                string += '<span class="pict">7</span>  ';
+                string += '<span class="pict"><img src="/static/icons/7Ресурс%209estilloFE.svg" alt=""></span>  ';
                 break;
             case '8':
-                string += '<span class="pict">8</span>  ';
+                string += '<span class="pict"><img src="/static/icons/8Ресурс%2010estilloFE.svg" alt=""></span>  ';
                 break;
             case '9':
-                string += '<span class="pict">9</span>  ';
+                string += '<span class="pict"><img src="/static/icons/9Ресурс%2011estilloFE.svg" alt=""></span>  ';
                 break;
 
         }
